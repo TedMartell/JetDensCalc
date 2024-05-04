@@ -14,82 +14,73 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class TempCalcActivity extends AppCompatActivity {
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp_calc);
 
+        // Find the EditText views and button
+        EditText currentTempInput = findViewById(R.id.currentTempInput);
+        EditText currentBatchInput = findViewById(R.id.currentBatchInput);
         Button calcTempButton = findViewById(R.id.calcTempDensityButton);
+
+        // Add TextWatcher to currentTempInput for validation
+        currentTempInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // No action needed here
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // No action needed here
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                validateCurrentTempInput(currentTempInput, s.toString());
+            }
+        });
+
+        // Add TextWatcher to currentBatchInput for validation
+        currentBatchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // No action needed here
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // No action needed here
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                validateCurrentBatchInput(currentBatchInput, s.toString());
+            }
+        });
+
+        // Button click listener for calculation
         calcTempButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("DefaultLocale")
+            @Override
             public void onClick(View v) {
-                EditText currentTempInput = findViewById(R.id.currentTempInput);
-                EditText currentBatchInput = findViewById(R.id.currentBatchInput);
-
-
-                // Set an initial text (optional, depending on your preference)
-                currentTempInput.setText(getString(R.string.enter_a_value_between_10_and_50));
-
-                // Set an OnFocusChangeListener to clear the initial text when the EditText gains focus
-                currentTempInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                    @Override
-                    public void onFocusChange(View v, boolean hasFocus) {
-                        if (hasFocus) {
-                            // Clear the text when the EditText gains focus
-                            currentTempInput.setText("");
-                        }
-                    }
-                });
-
-
-                // Add TextWatcher to currentTempInput for validation
-                currentTempInput.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                        // No action needed here
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        // No action needed here
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        validateCurrentTempInput(currentTempInput, s.toString());
-                    }
-                });
-
-                // Add TextWatcher to currentBatchInput for validation
-                currentBatchInput.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                        // No action needed here
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        // No action needed here
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        validateCurrentBatchInput(currentBatchInput, s.toString());
-                    }
-                });
-
-                // Perform final calculation if both inputs are valid
+                // Check if both inputs are valid
                 if (currentTempInput.getError() == null && currentBatchInput.getError() == null) {
+                    // Perform final calculation
                     float currentBatchTemp = Float.parseFloat(currentTempInput.getText().toString());
                     float currentBatchDensity = Float.parseFloat(currentBatchInput.getText().toString());
 
-                    // Perform the calculation and display the result
                     final double ALPHA = 0.0006;
                     final byte refTemp = 15;
                     double densityCurrentTemp = currentBatchDensity * (1 - ALPHA * (currentBatchTemp - refTemp));
                     TextView resultCalcTempDensity = findViewById(R.id.resultCalcTempDensity);
                     resultCalcTempDensity.setText(String.format("%.2f", densityCurrentTemp));
                 } else {
+                    // Inform the user of errors
                     Toast.makeText(TempCalcActivity.this, "Please correct the input values", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -124,6 +115,4 @@ public class TempCalcActivity extends AppCompatActivity {
             inputEditText.setError("Invalid input");
         }
     }
-
-
 }
