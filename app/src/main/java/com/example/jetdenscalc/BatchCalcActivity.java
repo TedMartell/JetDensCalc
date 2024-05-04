@@ -1,6 +1,9 @@
 package com.example.jetdenscalc;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,5 +25,25 @@ public class BatchCalcActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("DefaultLocale")
+    public void calcBatchDensity(View v) {
+
+
+        TextView currentVolumeInput = (TextView) findViewById(R.id.currentFuelVolumeInput);
+        float currentFuelVolume = Float.parseFloat(currentVolumeInput.getText().toString());
+
+        TextView currentBatchDensityInput = (TextView) findViewById(R.id.currFuelDensityInput);
+        float currentBatchDensity = Float.parseFloat(currentBatchDensityInput.getText().toString());
+
+        TextView addedVolumeInput = (TextView) findViewById(R.id.addedFuelVolumeInput);
+        float addedFuelVolume = Float.parseFloat(addedVolumeInput.getText().toString());
+
+        TextView addedBatchDensityInput = (TextView) findViewById(R.id.addedFuelDenistyInput);
+        float addedBatchDensity = Float.parseFloat(addedBatchDensityInput.getText().toString());
+
+        TextView resultCalcTempDensity = (TextView) findViewById(R.id.resultCalcBatchDensity);
+        double densityNewBatch = ((currentFuelVolume * currentBatchDensity) + (addedFuelVolume * addedBatchDensity)) / (currentFuelVolume + addedFuelVolume);
+        resultCalcTempDensity.setText(String.format("%.2f", densityNewBatch));
+    }
 
 }

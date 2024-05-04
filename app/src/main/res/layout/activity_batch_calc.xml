@@ -106,7 +106,7 @@
         android:id="@+id/labelAddedFuelDensity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="127dp"
+        android:layout_marginStart="124dp"
         android:layout_marginEnd="124dp"
         android:labelFor="@id/addedFuelDenistyInput"
         android:text="Enter Added Fuel Density:"
@@ -121,8 +121,38 @@
         android:layout_marginStart="161dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="160dp"
-        android:text="Button"
+        android:onClick="calcBatchDensity"
+        android:text="Calculate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelAddedFuelDensity" />
+
+    <EditText
+        android:id="@+id/resultCalcBatchDensity"
+        android:layout_width="240dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="86dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculateBatchDensityButton" />
+
+    <TextView
+        android:id="@+id/labelResultBatchDensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginBottom="32dp"
+        android:labelFor="@id/resultCalcBatchDensity"
+        android:text="Your New Batch Density is:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultCalcBatchDensity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
