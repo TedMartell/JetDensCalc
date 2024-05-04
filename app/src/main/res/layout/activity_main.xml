@@ -47,6 +47,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="32dp"
+        android:onClick="openBatchCalcActivity"
         android:text="@string/batchDensity_name"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"

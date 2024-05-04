@@ -21,4 +21,6 @@ public class BatchCalcActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+
 }
