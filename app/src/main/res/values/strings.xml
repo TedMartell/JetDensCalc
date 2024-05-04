@@ -27,4 +27,6 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="enter_density_at_15c">Enter density at 15°C</string>
+    <string name="enter_a_value_between_10_and_50">Enter a value between -10 and +50</string>
+    <string name="result">RESULT</string>
 </resources>

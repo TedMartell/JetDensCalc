@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -26,6 +25,22 @@ public class TempCalcActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText currentTempInput = findViewById(R.id.currentTempInput);
                 EditText currentBatchInput = findViewById(R.id.currentBatchInput);
+
+
+                // Set an initial text (optional, depending on your preference)
+                currentTempInput.setText(getString(R.string.enter_a_value_between_10_and_50));
+
+                // Set an OnFocusChangeListener to clear the initial text when the EditText gains focus
+                currentTempInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus) {
+                        if (hasFocus) {
+                            // Clear the text when the EditText gains focus
+                            currentTempInput.setText("");
+                        }
+                    }
+                });
+
 
                 // Add TextWatcher to currentTempInput for validation
                 currentTempInput.addTextChangedListener(new TextWatcher() {
@@ -109,4 +124,6 @@ public class TempCalcActivity extends AppCompatActivity {
             inputEditText.setError("Invalid input");
         }
     }
+
+
 }
