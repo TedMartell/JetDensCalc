@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#162636"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,14 +13,15 @@
         android:layout_width="120dp"
         android:layout_height="23dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="640dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="68dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/app_name"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,14 +30,18 @@
         android:layout_width="297dp"
         android:layout_height="53dp"
         android:layout_marginStart="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="27dp"
         android:layout_marginEnd="57dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="41dp"
+        android:background="#f0e9d6"
+        android:backgroundTint="#FBFBFB"
         android:onClick="openNewActivity"
         android:text="@string/tempDensity_name"
+        android:textColor="#0B0909"
+        android:textColorLink="#FBFBFB"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -44,46 +50,28 @@
         android:layout_width="297dp"
         android:layout_height="53dp"
         android:layout_marginStart="57dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="41dp"
         android:layout_marginEnd="57dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="50dp"
         android:onClick="openBatchCalcActivity"
         android:text="@string/batchDensity_name"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="297dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginBottom="50dp"
-        android:onClick="openSettingsActivity"
-        android:text="@string/settings_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="197dp"
-        android:layout_height="195dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="44dp"
-        android:contentDescription="@string/image_name"
+        android:layout_width="276dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="26dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jdc_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

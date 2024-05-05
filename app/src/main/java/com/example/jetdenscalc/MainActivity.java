@@ -33,9 +33,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BatchCalcActivity.class);
         startActivity(intent);
     }
-
-    public void openSettingsActivity(View view) {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-    }
 }

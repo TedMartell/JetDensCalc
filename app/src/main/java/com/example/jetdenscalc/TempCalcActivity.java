@@ -2,6 +2,7 @@ package com.example.jetdenscalc;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -40,6 +41,7 @@ public class TempCalcActivity extends AppCompatActivity {
                 finish();
             }
         });
+
 
 
 
