@@ -32,4 +32,7 @@
     <string name="enter_a_value_between_775_and_840">Enter a value between 775 and 840</string>
     <string name="enter_temperature">Enter Temperature</string>
     <string name="calculate">Calculate</string>
+    <string name="return_to_main_menu">Return To Main Menu</string>
+    <string name="return_from_batch_to_menu">Return From Batch to Menu</string>
+    <string name="enter_amount_litres">Enter Amount (litres)</string>
 </resources>

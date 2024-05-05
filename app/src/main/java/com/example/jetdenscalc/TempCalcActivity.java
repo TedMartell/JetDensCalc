@@ -1,12 +1,14 @@
 package com.example.jetdenscalc;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +19,29 @@ public class TempCalcActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp_calc);
+
+        // Return Button method
+        ImageButton returnButton = findViewById(R.id.returnButton);
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an intent to navigate back to MainActivity
+                Intent intent = new Intent(TempCalcActivity.this, MainActivity.class);
+
+                // Start MainActivity
+                startActivity(intent);
+
+                // Optional: finish the current activity if you don't want it in the back stack
+                finish();
+            }
+        });
+
+
 
         // Find the EditText views and button
         EditText currentTempInput = findViewById(R.id.currentTempInput);

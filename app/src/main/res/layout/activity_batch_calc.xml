@@ -9,71 +9,173 @@
 
     <EditText
         android:id="@+id/currentFuelVolumeInput"
-        android:layout_width="229dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="101dp"
+        android:layout_width="312dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
+        android:hint="@string/enter_amount_litres"
         android:inputType="numberDecimal"
-        android:text="0"
-        app:layout_constraintBottom_toTopOf="@+id/labelCurrFuelVol"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/labelCurrFuelVol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="102dp"
-        android:layout_marginEnd="102dp"
-        android:labelFor="@id/currentFuelVolumeInput"
-        android:text="Enter current Fuel Volume (litres):"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentFuelVolumeInput" />
-
-    <EditText
-        android:id="@+id/currFuelDensityInput"
-        android:layout_width="223dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="102dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelCurrFuelVol" />
+        app:layout_constraintTop_toBottomOf="@+id/oldBatchText" />
 
     <TextView
         android:id="@+id/labelCurrFuelDensity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="123dp"
-        android:layout_marginEnd="123dp"
-        android:text="Enter Current Fuel Density:"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="148dp"
+        android:text="Enter Fuel Density:"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currFuelDensityInput" />
 
+    <TextView
+        android:id="@+id/oldBatchText"
+        android:layout_width="145dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="163dp"
+        android:text="Old Batch:"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/currentFuelVolumeInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/returnFromBatchButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.83" />
+
+    <EditText
+        android:id="@+id/currFuelDensityInput"
+        android:layout_width="312dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:hint="@string/enter_a_value_between_775_and_840"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentFuelVolumeInput" />
+
+    <TextView
+        android:id="@+id/labelCurrFuelVol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="125dp"
+        android:labelFor="@id/currentFuelVolumeInput"
+        android:text="Enter Fuel Volume (litres):"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentFuelVolumeInput" />
+
     <EditText
         android:id="@+id/addedFuelVolumeInput"
-        android:layout_width="227dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="102dp"
+        android:layout_width="312dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
+        android:hint="@string/enter_amount_litres"
         android:inputType="numberDecimal"
-        android:text="0"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelCurrFuelDensity" />
+        app:layout_constraintTop_toBottomOf="@+id/newBatchText" />
+
+    <TextView
+        android:id="@+id/labelResultBatchDensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="3dp"
+        android:labelFor="@id/resultCalcBatchDensity"
+        android:text="Your New Batch Density is:"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBatchDensityButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultCalcBatchDensity" />
+
+    <EditText
+        android:id="@+id/addedFuelDenistyInput"
+        android:layout_width="312dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:hint="@string/enter_a_value_between_775_and_840"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/labelAddedFuelDensity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addedFuelVolumeInput" />
+
+    <EditText
+        android:id="@+id/resultCalcBatchDensity"
+        android:layout_width="279dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="67dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/result"
+        android:inputType="none"
+        android:text="@string/result"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelAddedFuelDensity" />
+
+    <Button
+        android:id="@+id/calculateBatchDensityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="64dp"
+        android:onClick="calcBatchDensity"
+        android:text="Calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelResultBatchDensity" />
+
+    <TextView
+        android:id="@+id/labelAddedFuelDensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="125dp"
+        android:labelFor="@id/addedFuelDenistyInput"
+        android:text="Enter Added Fuel Density:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addedFuelDenistyInput" />
 
     <TextView
         android:id="@+id/labelAddedFuelVolume"
@@ -81,78 +183,41 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
         android:layout_marginEnd="103dp"
+        android:layout_marginBottom="16dp"
         android:labelFor="@id/addedFuelVolumeInput"
         android:text="Enter Added Fuel Volume (litres):"
+        app:layout_constraintBottom_toTopOf="@+id/addedFuelDenistyInput"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addedFuelVolumeInput" />
+        app:layout_constraintTop_toBottomOf="@+id/addedFuelVolumeInput"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/addedFuelDenistyInput"
-        android:layout_width="247dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="82dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="0"
-        app:layout_constraintBottom_toTopOf="@+id/labelAddedFuelDensity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelAddedFuelVolume" />
-
-    <TextView
-        android:id="@+id/labelAddedFuelDensity"
+    <ImageButton
+        android:id="@+id/returnFromBatchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginEnd="124dp"
-        android:labelFor="@id/addedFuelDenistyInput"
-        android:text="Enter Added Fuel Density:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addedFuelDenistyInput" />
-
-    <Button
-        android:id="@+id/calculateBatchDensityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="160dp"
-        android:onClick="calcBatchDensity"
-        android:text="Calculate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelAddedFuelDensity" />
-
-    <EditText
-        android:id="@+id/resultCalcBatchDensity"
-        android:layout_width="240dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="86dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculateBatchDensityButton" />
-
-    <TextView
-        android:id="@+id/labelResultBatchDensity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="32dp"
-        android:labelFor="@id/resultCalcBatchDensity"
-        android:text="Your New Batch Density is:"
+        android:contentDescription="@string/return_from_batch_to_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultCalcBatchDensity" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <TextView
+        android:id="@+id/newBatchText"
+        android:layout_width="145dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="8dp"
+        android:text="New Batch:"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/addedFuelVolumeInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
