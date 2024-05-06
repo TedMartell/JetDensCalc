@@ -97,7 +97,7 @@ public class TempCalcActivity extends AppCompatActivity {
                     float currentBatchTemp = Float.parseFloat(currentTempInput.getText().toString());
                     float currentBatchDensity = Float.parseFloat(currentBatchInput.getText().toString());
 
-                    final double ALPHA = 0.0006;
+                    final double ALPHA = 0.0009;
                     final byte refTemp = 15;
                     double densityCurrentTemp = currentBatchDensity * (1 - ALPHA * (currentBatchTemp - refTemp));
                     TextView resultCalcTempDensity = findViewById(R.id.resultCalcTempDensity);
