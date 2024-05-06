@@ -36,11 +36,10 @@
         android:background="#f0e9d6"
         android:onClick="openNewActivity"
         android:text="@string/tempDensity_name"
-        android:textColor="#0B0909"
+        android:textColor="#162636"
         android:textColorLink="#FBFBFB"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -55,6 +54,7 @@
         android:background="#f0e9d6"
         android:onClick="openBatchCalcActivity"
         android:text="@string/batchDensity_name"
+        android:textColor="#162636"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,5 +73,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/jdc_logo" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="16dp"
+        android:text="Made by @TedMartell 2024"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -114,9 +114,9 @@ public class TempCalcActivity extends AppCompatActivity {
     private void validateCurrentTempInput(EditText inputEditText, String input) {
         try {
             float value = Float.parseFloat(input);
-            // Validate range between -10 and +50
-            if (value < -10 || value > 50) {
-                inputEditText.setError("Value must be between -10 and 50");
+            // Validate range between -40 and +50
+            if (value < -40 || value > 50) {
+                inputEditText.setError("Value must be between -40 and 50");
             } else {
                 inputEditText.setError(null);
             }
