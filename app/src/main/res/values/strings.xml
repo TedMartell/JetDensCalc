@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JetDensCalc</string>
+    <string name="app_name">JetDC</string>
     <string name="tempDensity_name">Temperature Density Calculator</string>
     <string name="batchDensity_name">Batch Density Calculator</string>
     <string name="settings_name">Settings</string>
