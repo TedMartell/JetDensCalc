@@ -12,27 +12,34 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
-
-public class TempCalcActivity extends AppCompatActivity {
-
-
-
-
+public class refTempCalcActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temp_calc);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_ref_temp_calc);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
 
         // Return Button method
-        ImageButton returnButton = findViewById(R.id.returnButton);
+        ImageButton returnButton = findViewById(R.id.refTempCalcReturnButton);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create an intent to navigate back to MainActivity
-                Intent intent = new Intent(TempCalcActivity.this, MainActivity.class);
+                Intent intent = new Intent(refTempCalcActivity.this, MainActivity.class);
 
                 // Start MainActivity
                 startActivity(intent);
@@ -43,12 +50,11 @@ public class TempCalcActivity extends AppCompatActivity {
         });
 
 
-
-
         // Find the EditText views and button
-        EditText currentTempInput = findViewById(R.id.currentTempInput);
-        EditText currentBatchInput = findViewById(R.id.currentBatchInput);
-        Button calcTempButton = findViewById(R.id.calcTempDensityButton);
+        EditText currentTempInput = findViewById(R.id.currTempInput);
+        EditText currentBatchDensityInput = findViewById(R.id.currBatchDensityInput);
+        Button calcTempButton = findViewById(R.id.refTempCalcResultButton);
+
 
         // Add TextWatcher to currentTempInput for validation
         currentTempInput.addTextChangedListener(new TextWatcher() {
@@ -69,7 +75,7 @@ public class TempCalcActivity extends AppCompatActivity {
         });
 
         // Add TextWatcher to currentBatchInput for validation
-        currentBatchInput.addTextChangedListener(new TextWatcher() {
+        currentBatchDensityInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // No action needed here
@@ -82,9 +88,10 @@ public class TempCalcActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                validateCurrentBatchInput(currentBatchInput, s.toString());
+                validateCurrentBatchDensityInput(currentBatchDensityInput, s.toString());
             }
         });
+
 
         // Button click listener for calculation
         calcTempButton.setOnClickListener(new View.OnClickListener() {
@@ -92,19 +99,19 @@ public class TempCalcActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Check if both inputs are valid
-                if (currentTempInput.getError() == null && currentBatchInput.getError() == null) {
+                if (currentTempInput.getError() == null && currentBatchDensityInput.getError() == null) {
                     // Perform final calculation
                     float currentBatchTemp = Float.parseFloat(currentTempInput.getText().toString());
-                    float currentBatchDensity = Float.parseFloat(currentBatchInput.getText().toString());
+                    float densityCurrentTemp = Float.parseFloat(currentBatchDensityInput.getText().toString());
                     SharedPreferences sharedPreferences = getSharedPreferences("SettingsPrefs", MODE_PRIVATE);
                     float alpha = sharedPreferences.getFloat("alpha_value", 0.0009f); // Use default 0.0009f if not found
                     final byte refTemp = 15;
-                    double densityCurrentTemp = currentBatchDensity * (1 - alpha * (currentBatchTemp - refTemp));
-                    TextView resultCalcTempDensity = findViewById(R.id.resultCalcTempDensity);
-                    resultCalcTempDensity.setText(String.format("%.2f", densityCurrentTemp));
+                    double currentBatchDensity = densityCurrentTemp / (1 - alpha * (currentBatchTemp - refTemp));
+                    TextView resultCalcRefDensity = findViewById(R.id.refTempCalcResult);
+                    resultCalcRefDensity.setText(String.format("%.2f", currentBatchDensity));
                 } else {
                     // Inform the user of errors
-                    Toast.makeText(TempCalcActivity.this, "Please correct the input values", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(refTempCalcActivity.this, "Please correct the input values", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -125,7 +132,7 @@ public class TempCalcActivity extends AppCompatActivity {
         }
     }
 
-    private void validateCurrentBatchInput(EditText inputEditText, String input) {
+    private void validateCurrentBatchDensityInput(EditText inputEditText, String input) {
         try {
             float value = Float.parseFloat(input);
             // Validate range between 775 and 840

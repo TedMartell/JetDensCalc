@@ -32,13 +32,11 @@
         android:layout_marginStart="57dp"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="57dp"
-        android:layout_marginBottom="32dp"
         android:background="#f0e9d6"
         android:onClick="openNewActivity"
         android:text="@string/tempDensity_name"
         android:textColor="#162636"
         android:textColorLink="#FBFBFB"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -48,15 +46,16 @@
         android:layout_width="297dp"
         android:layout_height="53dp"
         android:layout_marginStart="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="79dp"
         android:layout_marginEnd="57dp"
-        android:layout_marginBottom="153dp"
+        android:layout_marginBottom="22dp"
         android:background="#f0e9d6"
         android:onClick="openBatchCalcActivity"
         android:text="@string/batchDensity_name"
         android:textColor="#162636"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/refTempActivityButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -87,5 +86,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/refTempActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="60dp"
+        android:onClick="openRefTempCalcActivity"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <ImageButton
+        android:id="@+id/settingsActivityButton"
+        android:layout_width="79dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="563dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="13dp"
+        android:onClick="openSettingsActivity"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/refTempActivityButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@android:drawable/ic_menu_preferences" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

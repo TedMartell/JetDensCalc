@@ -10,6 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.jetdenscalc.databinding.ActivityRefTempCalcBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -33,4 +35,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BatchCalcActivity.class);
         startActivity(intent);
     }
+
+    public void openRefTempCalcActivity(View view) {
+        Intent intent = new Intent(this, refTempCalcActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSettingsActivity(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+
 }
