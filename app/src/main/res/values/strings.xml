@@ -36,4 +36,19 @@
     <string name="return_from_batch_to_menu">Return From Batch to Menu</string>
     <string name="enter_amount_litres">Enter Amount (litres)</string>
     <string name="todo">TODO</string>
+    <string name="made_by_https_github_com_tedmartell_2024">Made by https://github.com/TedMartell 2024</string>
+    <string name="get_density_at_15_c">Get Density at 15ºC</string>
+    <string name="get_mixed_batch_density">Get mixed batch density</string>
+    <string name="get_density_at_x_c">Get Density at X ºC</string>
+    <string name="jet_a1_density_calculator">Jet-A1 Density Calculator</string>
+    <string name="description">Description:
+    This app is designed to calculate the density of Jet-A1 aviation fuel, it runs 3 different calculations with different inputs.
+        The "Get Density at 15C" and "Get Density at x_C, are both dependent on a ALPHA value(the coefficient on how much the density changes per one degree Celsius)
+        The Alpha value is set at 0.0009 as default.
+        But if you are dealing with perhaps another supplier this value can vary.
+        Hence below is the option to change and save a new ALPHA Value if needed. DISCLAIMER this app is not made together with or is in affiliation with any Aviation Fuel provider.
+        It is crucial that you check your own inputs and values against the criteria of your work. JetDC does not take any responsibility of any wrongly used values potentially taken from this application!
+
+    </string>
+    <string name="save">SAVE</string>
 </resources>
